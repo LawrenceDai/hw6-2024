@@ -7,7 +7,6 @@ window.addEventListener("load", function() {
 
 	video.autoplay = false;
 	video.loop = false;
-	video.load();
 
 	console.log("Auto play is set to " + video.autoplay);
 	console.log("Loop is set to " + video.loop);
