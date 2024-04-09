@@ -1,9 +1,11 @@
-var video = document.querySelector("#player1");
-var volume = document.querySelector("#volume")
+var video;
+var volume_span;
 
 // on load set autoplay and loop to false
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
+	video = document.querySelector("#player1");
+	volume_span = document.querySelector("#volume");
 
 	video.autoplay = false;
 	video.loop = false;
@@ -17,7 +19,7 @@ document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
 
-	volume.innerHTML = video.volume * 100 + "%";
+	volume_span.innerHTML = video.volume * 100 + "%";
 });
 
 // pause button
@@ -56,7 +58,7 @@ document.querySelector("#mute").addEventListener("click", function () {
 // Volume slider
 document.querySelector("#slider").addEventListener("input", function () {
 	video.volume = this.value / 100;
-	volume.innerHTML = video.volume * 100 + "%";
+	volume_span.innerHTML = video.volume * 100 + "%";
 	console.log("Current volume: " + video.volume);
 })
 
